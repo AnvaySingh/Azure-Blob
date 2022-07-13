@@ -54,3 +54,20 @@ resource "azapi_update_resource" "this" {
   })
   response_export_values = ["etag"]
 }
+
+resource "azurerm_storage_management_policy" "example" {
+  storage_account_id = azurerm_storage_account.this.id
+
+  rule {
+    name    = "deleterule"
+    enabled = true
+    
+    actions {
+      base_blob {
+        delete_after_days_since_modification_greater_than = 30
+      }
+      
+    }
+  }
+
+}
