@@ -14,3 +14,5 @@ To test it, you can use Azure CLI to create these files and execute them using b
 *terraform plan*
 
 *terraform apply*
+
+Hashnode Blog: https://anvay.hashnode.dev/azapi-provider-in-terraform
